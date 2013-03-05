@@ -27,10 +27,19 @@ function (app, Marionette, ViewerView, TimelineView) {
 
       this.collection.on('reset', function (data) {
         self.viewer(data.first());
+        //self.fixViewer();
       });
       this.comments.on('reset', function (data) {
-        self.timeline(data);
+        //self.timeline(data);
+
+        var steps = 200;
+        var totalTime = 600000;
+        var i = 0;
+        setInterval(function() {
+          self.updateTimeline(steps*i++ / totalTime);
+        }, steps);
       });
+
     },
 
     viewer: function (data) {
@@ -45,6 +54,37 @@ function (app, Marionette, ViewerView, TimelineView) {
         collection: data
       });
       app.timeline.show(view);
+    },
+
+
+    fixViewer: function() {
+      var $viewerBody = $('#viewer-body');
+
+      var $viewerPlaceHolder = $('div');
+      $viewerPlaceHolder.css({
+        width: $viewerBody.width(),
+        height: $viewerBody.height()
+      });
+
+      $viewerBody.css({
+        position: 'fixed',
+        top: 0,
+        left: '50%',
+        marginLeft: - $viewerBody.width()/2
+      });
+
+    },
+
+    updateTimeline: function(percentage) {
+      var $timeline = $('#timeline');
+
+      var height = $timeline.height();
+
+      var offset = height * percentage * -1;
+
+      $timeline.css({
+        backgroundPosition: '0 ' + offset + 'px'
+      });
     }
 
   });
