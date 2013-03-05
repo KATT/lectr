@@ -30,7 +30,7 @@ module.exports = function(opts) {
   }
 
   var respond = function (req, res) {
-    var collection = JSON.parse(fs.readFileSync(__dirname + '/../data/' + req.params.model + '.json'));
+    var collection = JSON.parse(fs.readFileSync(__dirname + '/../data/output/data.json'));
     
     if (!req.params.id) {
       return res.send(collection);
@@ -61,6 +61,14 @@ module.exports = function(opts) {
   site.get('/:model/:id/:submodel', respond);
   site.get('/:model/:id', respond);
   site.get('/:model', respond);
+
+  var idCounter = 1000;
+  site.post('*', function (req, res) {
+    var body = req.body;
+    body.id = idCounter++;
+
+    res.send(body);
+  });
 
   // Actually listen
   site.listen(opts.port || null);
