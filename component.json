@@ -11,6 +11,7 @@
     "backbone": "0.9.10",
     "backbone.marionette": "~1.0.0-rc6",
     "backbone.marionette.hbs": "git@github.com:svnlto/backbone.marionette.hbs.git",
-    "backbone-relational": "~0.7.1"
+    "backbone-relational": "~0.7.1",
+    "moment": "~2.0.0"
   }
 }

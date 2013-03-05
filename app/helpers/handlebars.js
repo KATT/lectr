@@ -25,4 +25,8 @@ function(Handlebars) {
     }
   });
 
+
+  Handlebars.registerHelper('human', function(date) {
+    return new Moment(date).format();
+  });
 });
