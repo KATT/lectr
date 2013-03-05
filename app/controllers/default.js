@@ -20,7 +20,7 @@ function (app, Marionette) {
 
       this.collection = app.request('entities:courses');
 
-      console.log(this.collection)
+      console.log(this.collection);
 
     }
 
