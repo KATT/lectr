@@ -4,7 +4,8 @@
 
 require([
   'helpers/namespace',
-  'router'
+  'router',
+  'layout'
 ],
 
 function(app, router) {
