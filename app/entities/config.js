@@ -15,7 +15,7 @@ function(app, Marionette, BaseModel) {
 
   entities.ConfigModel = BaseModel.extend({
     defaults: {
-      apiUrl: 'http://localhost/',
+      apiUrl: 'http://localhost:4444/',
       ajaxTimeout: 5000,
       ajaxCache: true
     }
