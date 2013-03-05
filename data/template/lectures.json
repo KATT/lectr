@@ -3,7 +3,7 @@
 			"courseId": 1,
 			"title": ::title::, 
 			"description": ::description::, 
-			"duration": ::duration::
+			"duration": ::duration::,
 			"url": "::url::"
 		}
 		,::end::

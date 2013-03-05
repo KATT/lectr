@@ -93,7 +93,6 @@ class Main
 		var lectures_template = new haxe.Template(xa.File.read(LECTURES_TEMPLATE));
 
 		var lectures_output = lectures_template.execute({lectures: lectures}).split("\n");
-		// lectures_output = ; // <-- removes last comma
 
 		xa.File.write(LECTURES_JSON_OUTPUT_PATH, "[" + lectures_output.slice(0, lectures_output.length - 1).join("\n") + "]");
 	}
