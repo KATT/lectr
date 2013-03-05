@@ -1,4 +1,6 @@
 -neko bin/data.n
 -cp src
 -lib xapi
+-lib hxssl
 -main Main.hx
+-D haxeJSON

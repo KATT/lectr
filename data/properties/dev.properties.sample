@@ -1,0 +1,4 @@
+# copy this file and rename it dev.properties
+
+# set your Youtube API key here
+youtube_api_key=XXXXXXXXXXX
