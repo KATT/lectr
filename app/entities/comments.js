@@ -20,7 +20,8 @@ function(app, Marionette, BaseModel, BaseCollection) {
       courseId: '', // TODO make proper relation
       title: '',
       description: '',
-      url: ''
+      url: '',
+      created_at: ''
     }
   }),
 

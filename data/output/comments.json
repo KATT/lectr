@@ -2,7 +2,11 @@
  	{
 		"id": 1,
 		"lectureId": 1,
-		"time": 10,
-		"description": "description"
+		"timestamp": 10,
+		"author": "Juan",
+		"comment": "An awesome Juan-liner",
+		"upvotes": 100,
+		"downvotes": 9,
+		"created_at": "2013-03-05 15:20:00"
 	}
 ]

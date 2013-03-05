@@ -1,9 +1,20 @@
-<li>
-
-<img  alt="" />
-
-<div class="comment">
-
+<div class="media">
+	<a class="pull-left">
+		<img class="media-object" data-src="holder.js/64x64">
+	</a>
+	<div class="media-body">
+		<div class="votings pull-right">
+			<div class="upvote">{{upvotes}}</div>
+			<div class="downvote">{{downvotes}}</div>
+		</div>
+		<header class="media-heading">
+			<span class="author">
+				{{author}}
+			</span>
+			<span class="timestamp">{{created_at}}</span>
+		</header>
+		<p>
+			{{comment}}
+		</p>
+	</div>
 </div>
-
-</li>
