@@ -17,7 +17,8 @@ require.config({
     bootstrap:     '/lib/bootstrap/boostrap',
     marionette:    '/lib/backbone.marionette/lib/backbone.marionette',
     relational:    '/lib/backbone-relational/backbone-relational',
-    moment:        '/lib/moment/moment'
+    moment:        '/lib/moment/moment',
+    popcorn:       '/lib/popcornjs/popcorn'
   },
 
   shim: {
@@ -40,7 +41,11 @@ require.config({
     },
     'bootstrap':{
       deps: ['jquery']
+    },
+    'popcorn': {
+      exports: 'Popcorn'
     }
+
   }
 });
 

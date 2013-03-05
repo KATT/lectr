@@ -5,7 +5,8 @@
 define([
  'helpers/namespace',
  'marionette',
- 'hbs!templates/viewer/index'
+ 'hbs!templates/viewer/index',
+ 'popcorn'
 ],
 
 function (app, Marionette, template) {
