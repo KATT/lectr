@@ -1,5 +1,6 @@
 		::foreach lectures::{
 			"id": ::id::,
+			"courseId": 1,
 			"title": ::title::, 
 			"description": ::description::, 
 			"duration": ::duration::

@@ -6,9 +6,7 @@ class Main
 
 	var LECTURES_TEMPLATE : String = "template/lectures.json";
 
-	var DATA_TEMPLATE : String = "template/data.json";
-
-	var DATA_JSON_OUTPUT_PATH : String = "output/data.json";
+	var LECTURES_JSON_OUTPUT_PATH : String = "output/lectures.json";
 
 	var PROPERTIES_FILE : String = "properties/dev.properties";
 
@@ -95,11 +93,9 @@ class Main
 		var lectures_template = new haxe.Template(xa.File.read(LECTURES_TEMPLATE));
 
 		var lectures_output = lectures_template.execute({lectures: lectures}).split("\n");
-		lectures_output = lectures_output.slice(0, lectures_output.length - 1); // <-- removes last comma
+		// lectures_output = ; // <-- removes last comma
 
-		var data_template = new haxe.Template(xa.File.read(DATA_TEMPLATE));
-
-		xa.File.write(DATA_JSON_OUTPUT_PATH, data_template.execute({lectures: lectures_output.join("\n")}));
+		xa.File.write(LECTURES_JSON_OUTPUT_PATH, "[" + lectures_output.slice(0, lectures_output.length - 1).join("\n") + "]");
 	}
 
 	function getNode(xml : Xml, name : String) : Xml
