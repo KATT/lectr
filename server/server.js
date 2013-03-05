@@ -17,6 +17,7 @@ module.exports = function(opts) {
       site.use('/' + dir, staticDir(opts.baseDir + dir));
     });
     site.use(express.bodyParser());
+    site.use(express.favicon(__dirname + '/assets/images/favicon.ico'));
   });
 
   site.get("/", function(req, res) {
