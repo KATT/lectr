@@ -43,16 +43,16 @@ module.exports = function(opts) {
       var where = {};
 
       // lectures -> lectureId
-      where[req.params.model.substr(0, req.params.model.length-1) + 'Id']  = parseInt(req.params.modelId, 10);
+      where[req.params.model.substr(0, req.params.model.length-1) + 'Id']  = parseInt(req.params.modelID, 10);
       data = getCollection(req.params.submodel, where);
       return res.send(data);
     }
 
     data = getCollection(req.params.model);
     
-    if (req.params.modelId) {
-      var model = _.findWhere(data, {
-        id: parseInt(req.params.modelId, 10)
+    if (req.params.modelID) {
+      data = _.findWhere(data, {
+        id: parseInt(req.params.modelID, 10)
       });
     }
 
@@ -60,7 +60,7 @@ module.exports = function(opts) {
   };
 
 
-  site.get('/:model/:modelId/:submodel', respond);
+  site.get('/:model/:modelID/:submodel', respond);
   site.get('/:model/:modelID', respond);
   site.get('/:model', respond);
 
