@@ -1,0 +1,15 @@
+{
+  "name": "vertebrae",
+  "version": "0.0.1",
+  "main": ".app/index.html",
+  "dependencies": {
+    "jquery": "1.9.1",
+    "requirejs": "2.0.6",
+    "requirejs-text": "2.0.5",
+    "lodash": "1.0.1",
+    "handlebars": "1.0.0-rc.3",
+    "backbone": "0.9.10",
+    "backbone.marionette": "~1.0.0-rc6",
+    "backbone.marionette.hbs": "git@github.com:svnlto/backbone.marionette.hbs.git"
+  }
+}
