@@ -29,14 +29,47 @@ module.exports = function(opts) {
     });
   }
 
-  site.get('/:model', function (req, res) {
-    res.send(JSON.parse(fs.readFileSync(__dirname + '/../data/' + req.params.model + '.json')));
-  });
+  var respond = function (req, res) {
+    var collection = JSON.parse(fs.readFileSync(__dirname + '/../data/output/data.json'));
+    
+    if (!req.params.id) {
+      return res.send(collection);
+    }
+    var model = _.findWhere(collection, {
+      id: parseInt(req.params.id)
+    });
+
+    if (!req.params.submodel) {
+      return res.send(model);
+    }
+
+    var subCollection = model[req.params.submodel];
+
+    if (!req.params.submodelId) {
+      return res.send(subCollection);
+    }
 
 
-  site.get('/:model/:id', function (req, res) {
-    res.send(JSON.parse(fs.readFileSync(__dirname + '/../data/' + req.params.model + '/' + req.params.id + '.json')));
+    var subModel = _.findWhere(subCollection, {
+      id: parseInt(req.params.submodelId)
+    });
+
+    return res.send(subModel);
+  };
+
+  site.get('/:model/:id/:submodel/:submodelId', respond);
+  site.get('/:model/:id/:submodel', respond);
+  site.get('/:model/:id', respond);
+  site.get('/:model', respond);
+
+  var idCounter = 1000;
+  site.post('*', function (req, res) {
+    var body = req.body;
+    body.id = idCounter++;
+
+    res.send(body);
   });
+
   // Actually listen
   site.listen(opts.port || null);
   console.log("Serving at http://localhost:" + (opts.port || ''));

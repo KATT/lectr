@@ -1,0 +1,11 @@
+[
+	{
+		"id": 1,
+		"title": "Course title", 
+		"description": "Course description", 
+		"lectures": 
+		[
+			::lectures::
+		]
+	}
+]
