@@ -6,15 +6,18 @@ define([
  'helpers/namespace',
  'marionette',
  'hbs!templates/viewer/index',
- 'popcorn'
+ 'swfobject'
 ],
 
-function (app, Marionette, template) {
+function (app, Marionette, template, swfobject) {
 
   'use strict';
 
   var view = Marionette.ItemView.extend({
-    template : template
+    template : template,
+    initialize: function () {
+    }
+
   });
 
   return view;

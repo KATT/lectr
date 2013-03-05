@@ -18,7 +18,8 @@ require.config({
     marionette:    '/lib/backbone.marionette/lib/backbone.marionette',
     relational:    '/lib/backbone-relational/backbone-relational',
     moment:        '/lib/moment/moment',
-    popcorn:       '/lib/popcornjs/popcorn'
+    swfobject:     '/lib/swfobject/swfobject'
+
   },
 
   shim: {
@@ -42,8 +43,9 @@ require.config({
     'bootstrap':{
       deps: ['jquery']
     },
-    'popcorn': {
-      exports: 'Popcorn'
+
+    'swfobject': {
+      exports: 'swfobject'
     }
 
   }
