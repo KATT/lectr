@@ -9,6 +9,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-requirejs');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-shell');
+  grunt.loadNpmTasks('grunt-less');
 
   // Project configuration.
   grunt.initConfig({
@@ -23,7 +24,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: ['<config:lint.files>', 'assets/css/app/*.less'],
-      tasks: 'lint'
+      tasks: 'lint watch'
     },
 
     copy: {
@@ -31,6 +32,17 @@ module.exports = function(grunt) {
         files: {
           'prod/app/index.html': 'app/index.html',
           'prod/assets/css/': 'assets/css/**'
+        }
+      }
+    },
+
+    less: {
+      all: {
+        src: 'assets/css/app/app.less',
+        dest: 'assets/css/app/app.css',
+        options: {
+          compress: false,
+          yuicompress: false
         }
       }
     },
