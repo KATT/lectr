@@ -10,16 +10,22 @@ bower install
 node bin/dev
 ```
 
-# Data structure
-
-
+# Endpoints
 ````
 /courses
 /courses/1
 /lectures
 /lectures/1/comments
+
 ```
 
+# Files
+
+courses.json
+lectures.json
+comments.json
+
+# Data scheme
 ```
 course
     id
