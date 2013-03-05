@@ -1,0 +1,37 @@
+#nav {
+  height: 70px;
+  background: -moz-linear-gradient(left,  #2cc0bd 0%, #fce363 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#2cc0bd), color-stop(100%,#fce363)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #2cc0bd 0%,#fce363 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to right,  #2cc0bd 0%,#fce363 100%); /* W3C */
+}
+
+#nav > div {
+  width: 960px;
+  margin: 0 auto;
+  height: 70px;
+}
+
+.navbar {
+  color: #999999;
+  height: 70px;
+  background: url('/assets/images/lectr/header.png') no-repeat;
+}
+
+#viewer {
+  background-color: #F3F2F0;
+  height: 755px;
+}
+
+#viewer-header {
+  height: 150px;
+}
+
+#viewer-body {
+  background: url('/assets/images/lectr/poster.jpg') no-repeat;
+  width: 960px;
+  height: 550px;
+  margin: 0 auto;
+}
+
+
