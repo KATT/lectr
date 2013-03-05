@@ -1,3 +1,20 @@
 body {
-  background: red;
+  
+  color: #828282;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 12px;
 }
+
+
+
+#timeline {
+
+}
+	#timeline .author {
+		font-size: 15px;
+		font-weight: bold;
+	}
+	#timeline btn.upvote {
+
+	}
+
