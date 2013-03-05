@@ -71,7 +71,14 @@ class Main
 				continue;
 			}
 
-			var fast = new haxe.xml.Fast(Xml.parse(atom_content).firstElement());
+			var xml = Xml.parse(atom_content).firstElement();
+
+			// manually accessing namespaced nodes
+			var media_node = getNode(xml, "media:group");
+			var duration_node = getNode(media_node, "yt:duration");
+			var duration = new haxe.xml.Fast(duration_node).att.seconds;
+
+			var fast = new haxe.xml.Fast(xml);
 			var title = fast.node.title.innerHTML;
 			var description = fast.node.content.innerHTML;
 
@@ -80,6 +87,7 @@ class Main
 					id: i + 1,
 					title: haxe.Json.stringify(title),
 					description: haxe.Json.stringify(description),
+					duration: duration,
 					url: urls[i]
 				});
 		}
@@ -92,6 +100,25 @@ class Main
 		var data_template = new haxe.Template(xa.File.read(DATA_TEMPLATE));
 
 		xa.File.write(DATA_JSON_OUTPUT_PATH, data_template.execute({lectures: lectures_output.join("\n")}));
+	}
+
+	function getNode(xml : Xml, name : String) : Xml
+	{
+		var node = null;
+
+		var iterator = xml.iterator();
+
+		while(iterator.hasNext())
+		{
+			var xml_node = iterator.next();
+
+			if(name == xml_node.nodeName)
+			{
+				node = xml_node;
+			}
+		}
+
+		return node;
 	}
 
 	function getRequest(video_id : String) : haxe.Http

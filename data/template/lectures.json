@@ -2,6 +2,7 @@
 			"id": ::id::,
 			"title": ::title::, 
 			"description": ::description::, 
+			"duration": ::duration::
 			"url": "::url::"
 		}
 		,::end::
