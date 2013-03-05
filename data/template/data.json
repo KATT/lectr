@@ -1,0 +1,18 @@
+[
+	{
+		"id": 1,
+		"title": "Course title", 
+		"description": "Course description", 
+		"lectures": 
+		[
+			::foreach lectures::
+			{
+				"id": ::id::,
+				"title": "::title::", 
+				"description": "::description::", 
+				"url": "::url::"
+			},
+			::end::
+		]
+	}
+]

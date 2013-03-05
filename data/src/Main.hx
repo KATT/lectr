@@ -2,9 +2,9 @@ class Main
 {
 	var URLS_FILE_PATH : String = "template/urls.txt";
 
-	var LECTURES_TEMPLATE : String = "template/lectures.json";
+	var DATA_TEMPLATE : String = "template/data.json";
 
-	var LECTURES_JSON_OUTPUT_PATH : String = "output/lectures.json";
+	var DATA_JSON_OUTPUT_PATH : String = "output/data.json";
 
 	function new()
 	{
@@ -25,9 +25,9 @@ class Main
 				);
 		}
 
-		var lectures_template = new haxe.Template(xa.File.read(LECTURES_TEMPLATE));
+		var lectures_template = new haxe.Template(xa.File.read(DATA_TEMPLATE));
 
-		var lectures_output_json = xa.File.write(LECTURES_JSON_OUTPUT_PATH, lectures_template.execute({lectures: lectures_data_template}));
+		var lectures_output_json = xa.File.write(DATA_JSON_OUTPUT_PATH, lectures_template.execute({lectures: lectures_data_template}));
 	}
 
 	function log(txt : String) : Void
