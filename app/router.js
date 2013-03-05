@@ -22,7 +22,9 @@ function(app, Marionette) {
       },
 
       index: function() {
-        console.log('default route');
+        require(['controllers/default'], function (Controller) {
+          new Controller();
+        });
       }
 
     });
