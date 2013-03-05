@@ -7,6 +7,9 @@ body {
 
 }
 
+#nav, #viewer {
+	z-index: 1000000;
+}
 #nav {
   height: 70px;
   background: -moz-linear-gradient(left,  #2cc0bd 0%, #fce363 100%); /* FF3.6+ */
@@ -52,6 +55,10 @@ a {
 #timeline {
 	width: 960px;
 	margin: 0 auto;
+	z-index: 1;
+	height: 2886px;
+	background-image: url('/assets/images/lectr/table.png');
+	-webkit-transition: all .2s linear;
 }
 	#timeline media {
 		margin-bottom: 10px;
