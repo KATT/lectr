@@ -1,0 +1,7 @@
+		::foreach lectures::{
+			"id": ::id::,
+			"title": "::title::", 
+			"description": "::description::", 
+			"url": "::url::"
+		}
+		,::end::
