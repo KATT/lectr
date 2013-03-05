@@ -38,8 +38,9 @@ module.exports = function(opts) {
     return collection;
   };
 
-  var respond = function (req, res) {
+  var respond = function (req, res, next) {
     var data;
+
     if (req.params.submodel) {
       var where = {};
 
@@ -47,6 +48,11 @@ module.exports = function(opts) {
       where[req.params.model.substr(0, req.params.model.length-1) + 'Id']  = parseInt(req.params.modelID, 10);
       data = getCollection(req.params.submodel, where);
       return res.send(data);
+    }
+    
+    var path = __dirname + '/../data/output/' + req.params.model + '.json';
+    if (!fs.existsSync(path)) {
+      return next();
     }
 
     data = getCollection(req.params.model);

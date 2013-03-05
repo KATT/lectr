@@ -5,8 +5,7 @@
 define([
  'helpers/namespace',
  'marionette',
- 'hbs!templates/viewer/index',
- 'swfobject'
+ 'hbs!templates/viewer/index'
 ],
 
 function (app, Marionette, template, swfobject) {

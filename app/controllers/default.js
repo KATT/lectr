@@ -32,7 +32,7 @@ function (app, Marionette, ViewerView, TimelineView) {
       this.comments.on('reset', function (data) {
         //self.timeline(data);
 
-        var steps = 200;
+        var steps = 10;
         var totalTime = 600000;
         var i = 0;
         setInterval(function() {
