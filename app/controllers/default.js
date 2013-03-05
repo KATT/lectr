@@ -5,10 +5,12 @@
 define([
   'helpers/namespace',
   'marionette',
-  'entities/courses',
+  'views/viewer/index',
+  'views/timeline/collection',
+  'entities/courses'
 ],
 
-function (app, Marionette) {
+function (app, Marionette, ViewerView, TimelineView) {
 
   "use strict";
 
@@ -20,8 +22,20 @@ function (app, Marionette) {
 
       this.collection = app.request('entities:courses');
 
-      console.log(this.collection);
+      this.viewer();
+      this.timeline();
+    },
 
+    viewer: function () {
+      var view = new ViewerView();
+      app.viewer.show(view);
+    },
+
+    timeline: function () {
+      var view = new TimelineView({
+        collection: this.collection
+      });
+      app.timeline.show(view);
     }
 
   });
