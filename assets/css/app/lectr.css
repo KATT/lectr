@@ -16,6 +16,16 @@ a {
 #timeline {
 
 }
+	#timeline media {
+		margin-bottom: 10px;
+	}
+	#timeline .image-wrapper {
+		width: 68px;
+		height: 68px;
+		border: 1px solid #e1e2e3;
+		padding: 1px;
+		margin-right: 10px;
+	}
 	#timeline .author {
 		font-size: 15px;
 		font-weight: bold;
