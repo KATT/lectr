@@ -1,0 +1,17 @@
+
+[
+	{
+		"id": 1,
+		"title": "Course title", 
+		"description": "Course description", 
+		"lectures": [
+			{
+				"id": 1,
+				"title": "Lecture title", 
+				"description": 
+				"Lecture description", 
+				"url": "https://www.youtube.com/watch?v=UzxYlbK2c7E"
+			}
+		]
+	}
+]

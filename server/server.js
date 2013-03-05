@@ -29,6 +29,14 @@ module.exports = function(opts) {
     });
   }
 
+  site.get('/:model', function (req, res) {
+    res.send(JSON.parse(fs.readFileSync(__dirname + '/../data/' + req.params.model + '.json')));
+  });
+
+
+  site.get('/:model/:id', function (req, res) {
+    res.send(JSON.parse(fs.readFileSync(__dirname + '/../data/' + req.params.model + '/' + req.params.id + '.json')));
+  });
   // Actually listen
   site.listen(opts.port || null);
   console.log("Serving at http://localhost:" + (opts.port || ''));
