@@ -1,5 +1,5 @@
 body {
-  
+
   color: #828282;
   font-family: "Helvetica", "Arial", sans-serif;
   font-size: 12px;
@@ -7,11 +7,47 @@ body {
 
 }
 
-a {
-	color: #87d09c;
+#nav {
+  height: 70px;
+  background: -moz-linear-gradient(left,  #2cc0bd 0%, #fce363 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#2cc0bd), color-stop(100%,#fce363)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #2cc0bd 0%,#fce363 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to right,  #2cc0bd 0%,#fce363 100%); /* W3C */
+}
+
+#nav > div {
+  width: 960px;
+  margin: 0 auto;
+  height: 70px;
+}
+
+.navbar {
+  color: #999999;
+  height: 70px;
+  background: url('/assets/images/lectr/header.png') no-repeat;
+}
+
+#viewer {
+  background-color: #F3F2F0;
+  height: 755px;
+}
+
+#viewer-header {
+  height: 150px;
+}
+
+#viewer-body {
+  background: url('/assets/images/lectr/poster.jpg') no-repeat;
+  width: 960px;
+  height: 550px;
+  margin: 0 auto;
 }
 
 
+
+a {
+	color: #87d09c;
+}
 
 #timeline {
 
@@ -26,36 +62,37 @@ a {
 		padding: 1px;
 		margin-right: 10px;
 	}
-	#timeline .author {
-		font-size: 15px;
-		font-weight: bold;
 
-		margin-right: 10px;
+	#timeline .author {
+	  font-size: 15px;
+	  font-weight: bold;
+
+	  margin-right: 10px;
 	}
 	#timeline .upvote, #timeline .downvote {
-		background-image: url('/assets/images/lectr/thumb_up_off.png');
-		background-position: center top;
-		background-repeat: no-repeat;
-		padding-top: 20px;
+	  background-image: url('/assets/images/lectr/thumb_up_off.png');
+	  background-position: center top;
+	  background-repeat: no-repeat;
+	  padding-top: 20px;
 
-		font-size: 11px;
-		text-align: center;
-		width: 20px;
+	  font-size: 11px;
+	  text-align: center;
+	  width: 20px;
 
-		cursor: pointer;
+	  cursor: pointer;
 
-		display: inline-block;
+	  display: inline-block;
 	}
 
-	#timeline .upvote:hover, #timeline .upvote.active { 
-		background-image: url('/assets/images/lectr/thumb_up_on.png');
+	#timeline .upvote:hover, #timeline .upvote.active {
+	  background-image: url('/assets/images/lectr/thumb_up_on.png');
 	}
 
 	#timeline .downvote {
-		background-image: url('/assets/images/lectr/thumb_down_off.png');
-		margin-left: 5px;
+	  background-image: url('/assets/images/lectr/thumb_down_off.png');
+	  margin-left: 5px;
 	}
 
-	#timeline .downvote:hover, #timeline .downvote.active { 
-		background-image: url('/assets/images/lectr/thumb_down_on.png');
+	#timeline .downvote:hover, #timeline .downvote.active {
+	  background-image: url('/assets/images/lectr/thumb_down_on.png');
 	}
