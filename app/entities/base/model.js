@@ -2,7 +2,11 @@
 // ## entities.base.model
 //
 
-define(function() {
+define([
+  'relational'
+],
+
+function() {
 
   "use strict";
 
