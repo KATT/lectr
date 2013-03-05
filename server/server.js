@@ -29,37 +29,39 @@ module.exports = function(opts) {
     });
   }
 
-  var respond = function (req, res) {
-    var collection = JSON.parse(fs.readFileSync(__dirname + '/../data/output/data.json'));
-    
-    if (!req.params.id) {
-      return res.send(collection);
+  var getCollection = function (model, where) {
+    var collection = JSON.parse(fs.readFileSync(__dirname + '/../data/output/' + model + '.json'));
+    if (where) {
+      collection = _.where(collection, where);
     }
-    var model = _.findWhere(collection, {
-      id: parseInt(req.params.id)
-    });
-
-    if (!req.params.submodel) {
-      return res.send(model);
-    }
-
-    var subCollection = model[req.params.submodel];
-
-    if (!req.params.submodelId) {
-      return res.send(subCollection);
-    }
-
-
-    var subModel = _.findWhere(subCollection, {
-      id: parseInt(req.params.submodelId)
-    });
-
-    return res.send(subModel);
+    return collection;
   };
 
-  site.get('/:model/:id/:submodel/:submodelId', respond);
-  site.get('/:model/:id/:submodel', respond);
-  site.get('/:model/:id', respond);
+  var respond = function (req, res) {
+    var data;
+    if (req.params.submodel) {
+      var where = {};
+
+      // lectures -> lectureId
+      where[req.params.model.substr(0, req.params.model.length-1) + 'Id']  = parseInt(req.params.modelId, 10);
+      data = getCollection(req.params.submodel, where);
+      return res.send(data);
+    }
+
+    data = getCollection(req.params.model);
+    
+    if (req.params.modelId) {
+      var model = _.findWhere(data, {
+        id: parseInt(req.params.modelId, 10)
+      });
+    }
+
+    return res.send(data);
+  };
+
+
+  site.get('/:model/:modelId/:submodel', respond);
+  site.get('/:model/:modelID', respond);
   site.get('/:model', respond);
 
   var idCounter = 1000;
