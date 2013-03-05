@@ -14,7 +14,9 @@ require.config({
     handlebars:    '/lib/handlebars/handlebars',
     lodash:        '/lib/lodash/lodash',
     backbone:      '/lib/backbone/backbone',
-    marionette:    '/lib/backbone.marionette/lib/backbone.marionette'
+    bootstrap:     '/lib/bootstrap/boostrap',
+    marionette:    '/lib/backbone.marionette/lib/backbone.marionette',
+    relational:    '/lib/backbone-relational/backbone-relational'
   },
 
   shim: {
@@ -30,9 +32,10 @@ require.config({
 
     'handlebars': {
       exports: 'Handlebars'
+    },
+    'bootstrap':{
+      deps: ['jquery']
     }
-
-
   }
 });
 
